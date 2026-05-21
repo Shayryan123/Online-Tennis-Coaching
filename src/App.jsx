@@ -22,7 +22,7 @@ function App() {
         <section style={styles.hero}>
           <div style={styles.heroContent}>
             <p style={styles.eyebrow}>Former UK #1 Junior • GB & Wales Representative • LTA Level 3 Coach</p>
-            <h1 style={styles.heroTitle}>Online tennis coaching for serious players who want to think, train and compete better.</h1>
+            <h1 style={styles.heroTitle}>Online tennis coaching for players who want to think, train and compete better.</h1>
             <p style={styles.heroText}>
               Get elite-level technical and tactical feedback from a coach with 18 years playing experience, 5 years coaching experience, and a proven eye for what separates levels.
             </p>
