@@ -19,13 +19,13 @@ function App() {
           </a>
         </div>
 
-        <img src="/hero.jpg" style={styles.heroImage} />
+        <img src="/src/playing.png" style={styles.heroImage} />
       </section>
 
       {/* ABOUT */}
       <section style={styles.lightSection}>
         <div style={styles.aboutGrid}>
-          <img src="/coach.jpg" style={styles.aboutImage} />
+          <img src="/src/profile pic.png" style={styles.aboutImage} />
 
           <div>
             <h2 style={styles.sectionTitle}>Meet Your Coach</h2>
@@ -49,7 +49,7 @@ function App() {
           Working with players in real environments — building technical and tactical understanding.
         </p>
 
-        <img src="/group.jpg" style={styles.groupImage} />
+        <img src="/src/coaching group.png" style={styles.groupImage} />
       </section>
 
       {/* SERVICES */}
@@ -79,7 +79,7 @@ function App() {
 
       {/* SECOND ACTION IMAGE */}
       <section style={styles.section}>
-        <img src="/action2.jpg" style={styles.heroImage} />
+        <img src="/src/2 playing.png" style={styles.heroImage} />
       </section>
 
       {/* CTA */}
