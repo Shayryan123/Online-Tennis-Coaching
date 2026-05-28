@@ -72,7 +72,7 @@ function App() {
             <p style={styles.sectionSubtext}>Start simple with a video analysis, then build into a structured plan if you want ongoing development.</p>
           </div>
 
-          ← Swipe to view more →</div>
+          <div style={styles.swipeHint} className="swipe-hint">← Swipe to view more →</div>
           <div style={styles.cardsGrid} className="cards-grid">
             <OfferCard
               title="Video Analysis"
@@ -146,7 +146,8 @@ function App() {
             </p>
           </div>
 
-          <div style={styles.swipeHint} className="swipe-hint">ridFour} className="process-grid-four">
+          <div style={styles.swipeHint} className="swipe-hint">← Swipe to view more →</div>
+          <div style={styles.processGridFour} className="process-grid-four">
             <ProcessCard step="01" title="Choose your option" text="Pick video analysis, a tactical match review, or monthly support depending on the level of feedback you want." />
             <ProcessCard step="02" title="Send your footage" text="Clips, full matches, training sessions or point-play footage are all suitable. The clearer the footage, the better the analysis." />
             <ProcessCard step="03" title="Receive your breakdown" text="Your feedback can be delivered by email, WhatsApp or video call, depending on what suits you best." />
@@ -213,7 +214,9 @@ function App() {
             Real feedback from players who used online video analysis and tactical match review to better understand their technique, decision-making and patterns of play.
           </p>
           <div style={styles.swipeHint} className="swipe-hint">← Swipe to read more →</div>
-          <div style={styles.testimon             text="I sent Shay around 20 minutes of footage combining points from squad sessions and a match I had played using the Tactical Match Review option. The feedback was detailed but explained in a simple way that completely opened my eyes to my game from a tactical perspective. The level of detail was fantastic and I would recommend it to anyone wanting genuine insight into their play. Shay also offered an additional online call if I was unsure how to apply the feedback going forward, which was a great touch."
+          <div style={styles.testimonialGridThree} className="testimonial-grid-three">
+            <Testimonial
+              text="I sent Shay around 20 minutes of footage combining points from squad sessions and a match I had played using the Tactical Match Review option. The feedback was detailed but explained in a simple way that completely opened my eyes to my game from a tactical perspective. The level of detail was fantastic and I would recommend it to anyone wanting genuine insight into their play. Shay also offered an additional online call if I was unsure how to apply the feedback going forward, which was a great touch."
               name="Josh Lown"
               role="Competitive Club Player"
             />
@@ -457,7 +460,10 @@ const responsiveCss = `
     .swipe-hint {
       display: block !important;
       text-align: center !important;
-      color: #9   letter-spacing: 0.08em !important;
+      color: #94a3b8 !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.08em !important;
       text-transform: uppercase !important;
       margin: -18px 0 18px !important;
     }
@@ -483,7 +489,7 @@ const styles = {
     zIndex: 20,
     display: "flex",
     justifyContent: "space-between",
-   nter",
+    alignItems: "center",
     padding: "20px 7%",
     background: "rgba(2, 6, 23, 0.92)",
     backdropFilter: "blur(16px)",
@@ -984,4 +990,5 @@ const styles = {
 };
 
 export default App;
+
 
