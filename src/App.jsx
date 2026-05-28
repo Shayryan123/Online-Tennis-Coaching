@@ -1,7 +1,7 @@
 import React from "react";
 
 import heroImage from "./playing.png";
-import coachImage from "./profile pic.png";
+import coachImage from "./portrait.jpg";
 import groupImage from "./coaching group.png";
 import actionImage from "./2 playing.png";
 
@@ -1072,3 +1072,4 @@ const styles = {
 };
 
 export default App;
+
