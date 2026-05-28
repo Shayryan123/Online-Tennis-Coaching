@@ -75,18 +75,43 @@ function App() {
             <OfferCard
               title="Video Analysis"
               price="From £35"
-              text="Send footage of your strokes, point play, or match clips and receive a clear breakdown of what to improve next."
+              text="A focused breakdown of your technique, movement and match play designed to give you immediate clarity on what to improve next."
+              includes={[
+                "Technical analysis of strokes and movement",
+                "Tactical observations from real points",
+                "Clear priorities to focus on",
+                "Simple drill ideas to apply straight away",
+              ]}
+              bestFor="Players who want expert feedback without committing to ongoing coaching."
+              outcome="You leave knowing what is helping your game, what is limiting it, and what to work on next."
             />
             <OfferCard
               title="Monthly Performance Plan"
               price="From £120/month"
-              text="Ongoing technical and tactical feedback with priorities, progress tracking, and structure for serious improvement."
+              text="Ongoing online coaching support for players who want structured improvement over time rather than isolated feedback sessions."
+              includes={[
+                "Weekly video analysis",
+                "Personalised training priorities",
+                "Ongoing technical and tactical feedback",
+                "Direct messaging support",
+                "Progress tracking over time",
+              ]}
+              bestFor="Competitive juniors, tournament players and ambitious adults looking for consistent guidance."
+              outcome="Build stronger habits, improve decision-making and develop your game with a clear long-term structure."
               featured
             />
             <OfferCard
               title="Tactical Match Review"
               price="Custom"
-              text="Break down point patterns, decision-making, positioning, and the habits that are costing you matches."
+              text="A deeper look into point construction, decision-making and match patterns to help you understand how higher-level players win points."
+              includes={[
+                "Match and point pattern analysis",
+                "Tactical decision-making review",
+                "Positioning and court awareness feedback",
+                "Strategic adjustments for competition",
+              ]}
+              bestFor="Players who feel technically capable but struggle to apply their level consistently in matches."
+              outcome="Develop a smarter understanding of how to build points, expose weaknesses and compete more effectively under pressure."
             />
           </div>
         </section>
@@ -160,13 +185,33 @@ function Stat({ number, label }) {
   );
 }
 
-function OfferCard({ title, price, text, featured }) {
+function OfferCard({ title, price, text, includes, bestFor, outcome, featured }) {
   return (
     <div style={featured ? { ...styles.offerCard, ...styles.featuredCard } : styles.offerCard}>
       {featured && <p style={styles.popularTag}>Most popular</p>}
       <h3>{title}</h3>
-      <p>{text}</p>
-      <strong>{price}</strong>
+      <p style={styles.offerIntro}>{text}</p>
+
+      <div style={styles.offerDetailBlock}>
+        <span style={styles.offerLabel}>What’s included</span>
+        <ul style={styles.offerList}>
+          {includes.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div style={styles.offerDetailBlock}>
+        <span style={styles.offerLabel}>Best for</span>
+        <p style={styles.offerSmallText}>{bestFor}</p>
+      </div>
+
+      <div style={styles.offerDetailBlock}>
+        <span style={styles.offerLabel}>Outcome</span>
+        <p style={styles.offerSmallText}>{outcome}</p>
+      </div>
+
+      <strong style={styles.offerPrice}>{price}</strong>
     </div>
   );
 }
@@ -412,13 +457,47 @@ const styles = {
   offerCard: {
     position: "relative",
     padding: 30,
-    minHeight: 270,
+    minHeight: 560,
     borderRadius: 28,
     background: "#111827",
     border: "1px solid rgba(255,255,255,0.1)",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    gap: 18,
+  },
+  offerIntro: {
+    color: "#cbd5e1",
+    lineHeight: 1.7,
+    margin: 0,
+  },
+  offerDetailBlock: {
+    borderTop: "1px solid rgba(255,255,255,0.1)",
+    paddingTop: 16,
+  },
+  offerLabel: {
+    display: "block",
+    color: "#b7ff38",
+    fontSize: 12,
+    fontWeight: 900,
+    textTransform: "uppercase",
+    letterSpacing: "0.12em",
+    marginBottom: 10,
+  },
+  offerList: {
+    margin: 0,
+    paddingLeft: 20,
+    color: "#e2e8f0",
+    lineHeight: 1.75,
+  },
+  offerSmallText: {
+    margin: 0,
+    color: "#d1d5db",
+    lineHeight: 1.65,
+  },
+  offerPrice: {
+    marginTop: "auto",
+    color: "#ffffff",
+    fontSize: 20,
   },
   featuredCard: {
     background: "linear-gradient(180deg, rgba(183,255,56,0.2), #111827)",
