@@ -333,7 +333,7 @@ const responsiveCss = `
     .faq-section,
     .image-break-section {
       grid-template-columns: 1fr !important;
-      gap: 38px !important;
+      gap: 32px !important;
     }
 
     .stats-strip,
@@ -379,7 +379,7 @@ const responsiveCss = `
     .image-break-section,
     .testimonial-section,
     .cta-section {
-      padding: 64px 5% !important;
+      padding: 52px 5% !important;
     }
 
     .hero-section {
@@ -396,11 +396,29 @@ const responsiveCss = `
       line-height: 1.08 !important;
     }
 
-    .stats-strip,
+    .stats-strip {
+      grid-template-columns: repeat(4, minmax(150px, 1fr)) !important;
+      overflow-x: auto !important;
+    }
+
     .cards-grid,
     .process-grid-four,
-    .faq-grid-compact,
     .testimonial-grid-three {
+      display: flex !important;
+      overflow-x: auto !important;
+      gap: 16px !important;
+      scroll-snap-type: x mandatory !important;
+      padding-bottom: 12px !important;
+    }
+
+    .cards-grid > *,
+    .process-grid-four > *,
+    .testimonial-grid-three > * {
+      min-width: 82vw !important;
+      scroll-snap-align: start !important;
+    }
+
+    .faq-grid-compact {
       grid-template-columns: 1fr !important;
     }
 
@@ -660,7 +678,7 @@ const styles = {
   offerCard: {
     position: "relative",
     padding: 30,
-    minHeight: 560,
+    minHeight: 520,
     borderRadius: 28,
     background: "#111827",
     border: "1px solid rgba(255,255,255,0.1)",
@@ -888,7 +906,7 @@ const styles = {
     boxShadow: "0 20px 55px rgba(15,23,42,0.06)",
     display: "flex",
     flexDirection: "column",
-    minHeight: 500,
+    minHeight: 460,
   },
   quoteMark: {
     color: "#65a30d",
@@ -949,4 +967,3 @@ const styles = {
 };
 
 export default App;
-
