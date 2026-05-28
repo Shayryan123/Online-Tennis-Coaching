@@ -249,18 +249,18 @@ function App() {
             Send a clip, ask a question, or get advice on which package is best for your game.
           </p>
 
-          <div style={styles.contactCard}>
-            <div style={styles.contactItem}>
+          <div style={styles.contactCard} className="contact-card">
+            <div style={styles.contactItem} className="contact-item">
               <span>Email</span>
               <a href={`mailto:${contactEmail}?subject=Online Tennis Coaching Enquiry`}>{contactEmail}</a>
             </div>
 
-            <div style={styles.contactItem}>
+            <div style={styles.contactItem} className="contact-item">
               <span>WhatsApp</span>
               <a href={`https://wa.me/${whatsappNumber}`}>Message on WhatsApp</a>
             </div>
 
-            <div style={styles.contactItem}>
+            <div style={styles.contactItem} className="contact-item">
               <span>Phone</span>
               <a href={`tel:${phoneNumber.split(" ").join("")}`}>{phoneNumber}</a>
             </div>
@@ -506,13 +506,22 @@ const responsiveCss = `
       box-sizing: border-box !important;
     }
 
-    .contactCard {
-      grid-template-columns: 1fr !important;
+    .contact-card {
+      display: flex !important;
+      flex-direction: column !important;
       width: 100% !important;
+      max-width: 100% !important;
       padding: 20px !important;
+      overflow: hidden !important;
     }
 
-    .contactItem a {
+    .contact-item {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .contact-item a {
       word-break: break-word !important;
       overflow-wrap: anywhere !important;
     }
@@ -1100,4 +1109,5 @@ const styles = {
 };
 
 export default App;
+
 
