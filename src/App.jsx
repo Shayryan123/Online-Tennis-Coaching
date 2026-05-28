@@ -135,18 +135,57 @@ function App() {
           <img src={groupImage} alt="Shay Ryan coaching a group of tennis players" style={styles.proofImage} />
         </section>
 
-        <section style={styles.videoSection}>
+        <section style={styles.howItWorksSection}>
           <div style={styles.sectionIntro}>
-            <p style={styles.sectionLabel}>Video coaching</p>
-            <h2 style={styles.sectionTitle}>Send your clips. Get clear answers.</h2>
+            <p style={styles.sectionLabel}>How it works</p>
+            <h2 style={styles.sectionTitle}>A simple process built around your footage.</h2>
             <p style={styles.sectionSubtext}>
-              Add a coaching breakdown video here later from YouTube, Vimeo, or Instagram. For now, this section explains the process clearly.
+              Online coaching should feel clear, personal and useful. You send the footage, I analyse the key technical and tactical patterns, then you receive feedback you can actually take into training or matches.
             </p>
           </div>
-          <div style={styles.processGrid}>
-            <ProcessCard step="01" title="Send your video" text="Upload clips of strokes, rallies, points, or match play." />
-            <ProcessCard step="02" title="Receive analysis" text="Get technical and tactical feedback in simple, direct language." />
-            <ProcessCard step="03" title="Train with purpose" text="Use clear priorities and drills to improve faster." />
+
+          <div style={styles.processGridFour}>
+            <ProcessCard step="01" title="Choose your option" text="Pick video analysis, a tactical match review, or monthly support depending on the level of feedback you want." />
+            <ProcessCard step="02" title="Send your footage" text="Clips, full matches, training sessions or point-play footage are all suitable. The clearer the footage, the better the analysis." />
+            <ProcessCard step="03" title="Receive your breakdown" text="Your feedback can be delivered by email, WhatsApp or video call, depending on what suits you best." />
+            <ProcessCard step="04" title="Apply the next steps" text="You leave with clear priorities, patterns to understand, and training ideas to help guide your next block of work." />
+          </div>
+        </section>
+
+        <section style={styles.faqSection}>
+          <div style={styles.faqIntro}>
+            <p style={styles.sectionLabelDark}>FAQ</p>
+            <h2 style={styles.darkTitle}>Common questions before getting started.</h2>
+            <p style={styles.darkText}>
+              If you are unsure what footage to send or which option is right for you, these answers should help make the process clearer.
+            </p>
+          </div>
+
+          <div style={styles.faqGrid}>
+            <FAQItem
+              question="What type of footage should I send?"
+              answer="You can send match footage, training clips, squad points, rally footage, serve practice or doubles clips. Full matches and shorter clips are both useful, depending on what you want analysed."
+            />
+            <FAQItem
+              question="Do I need high-quality camera footage?"
+              answer="No, but the clearer the footage, the better. A phone recording is fine as long as the court, player movement and ball direction are reasonably visible."
+            />
+            <FAQItem
+              question="Can you analyse tactics as well as technique?"
+              answer="Yes. The coaching focuses on both technical details and tactical patterns, including decision-making, positioning, shot selection and how points are being won or lost."
+            />
+            <FAQItem
+              question="How is the feedback delivered?"
+              answer="Feedback can be delivered through email, WhatsApp or an online video call depending on the package and your preference. The aim is to make the analysis clear and easy to apply."
+            />
+            <FAQItem
+              question="Which package should I start with?"
+              answer="If you want a first look at your game, start with Video Analysis. If you want match-specific tactical feedback, choose Tactical Match Review. If you want ongoing development, the Monthly Performance Plan is the best fit."
+            />
+            <FAQItem
+              question="Is this suitable for doubles players?"
+              answer="Yes. Doubles footage can be especially useful because positioning, movement, volleying choices, serve-plus-one patterns and partnership decisions can all be reviewed."
+            />
           </div>
         </section>
 
@@ -241,6 +280,15 @@ function ProcessCard({ step, title, text }) {
       <span>{step}</span>
       <h3>{title}</h3>
       <p>{text}</p>
+    </div>
+  );
+}
+
+function FAQItem({ question, answer }) {
+  return (
+    <div style={styles.faqItem}>
+      <h3>{question}</h3>
+      <p>{answer}</p>
     </div>
   );
 }
@@ -566,9 +614,18 @@ const styles = {
     padding: "95px 7%",
     background: "#020617",
   },
+  howItWorksSection: {
+    padding: "95px 7%",
+    background: "#020617",
+  },
   processGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
+    gap: 22,
+  },
+  processGridFour: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
     gap: 22,
   },
   processCard: {
@@ -576,6 +633,29 @@ const styles = {
     background: "rgba(255,255,255,0.06)",
     border: "1px solid rgba(255,255,255,0.1)",
     borderRadius: 26,
+  },
+  faqSection: {
+    display: "grid",
+    gridTemplateColumns: "0.85fr 1.15fr",
+    gap: 52,
+    padding: "95px 7%",
+    background: "#f8fafc",
+    color: "#020617",
+  },
+  faqIntro: {
+    maxWidth: 560,
+  },
+  faqGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: 18,
+  },
+  faqItem: {
+    background: "#ffffff",
+    border: "1px solid #e2e8f0",
+    borderRadius: 24,
+    padding: 24,
+    boxShadow: "0 16px 45px rgba(15,23,42,0.05)",
   },
   imageBreakSection: {
     display: "grid",
@@ -693,5 +773,3 @@ const styles = {
 };
 
 export default App;
-
-
