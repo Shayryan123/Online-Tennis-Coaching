@@ -14,7 +14,7 @@ function App() {
     <div style={styles.page}>
       <style>{responsiveCss}</style>
       <header style={styles.header} className="site-header">
-        <div style={styles.brand}>Shay Ryan Tennis</div>
+        <div style={styles.brand}>SR Tennis Performance</div>
         <nav style={styles.nav} className="site-nav">
           <a href="#about" style={styles.navLink}>About</a>
           <a href="#coaching" style={styles.navLink}>Coaching</a>
@@ -1072,4 +1072,3 @@ const styles = {
 };
 
 export default App;
-
