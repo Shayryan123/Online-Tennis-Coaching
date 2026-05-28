@@ -487,6 +487,34 @@ const responsiveCss = `
     .question-box a {
       width: 100% !important;
       text-align: center !important;
+      white-space: normal !important;
+    }
+
+    .enquiryButtons,
+    .ctaButtonRow {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+    }
+
+    .enquiryButtons a,
+    .ctaButtonRow a {
+      width: 100% !important;
+      text-align: center !important;
+      white-space: normal !important;
+      box-sizing: border-box !important;
+    }
+
+    .contactCard {
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+      padding: 20px !important;
+    }
+
+    .contactItem a {
+      word-break: break-word !important;
+      overflow-wrap: anywhere !important;
     }
 
     .swipe-hint {
@@ -1072,3 +1100,4 @@ const styles = {
 };
 
 export default App;
+
