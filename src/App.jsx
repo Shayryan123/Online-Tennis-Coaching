@@ -5,6 +5,10 @@ import coachImage from "./profile pic.png";
 import groupImage from "./coaching group.png";
 import actionImage from "./2 playing.png";
 
+const contactEmail = "srtennisperformance@yahoo.com";
+const phoneNumber = "+44 7719 824916";
+const whatsappNumber = "447719824916";
+
 function App() {
   return (
     <div style={styles.page}>
@@ -192,9 +196,14 @@ function App() {
               </p>
             </div>
 
-            <a href="mailto:your-email@example.com" style={styles.questionButton}>
-              Send an Email
-            </a>
+            <div style={styles.enquiryButtons}>
+              <a href={`mailto:${contactEmail}?subject=Online Tennis Coaching Enquiry`} style={styles.questionButton}>
+                Email Shay
+              </a>
+              <a href={`https://wa.me/${whatsappNumber}`} style={styles.whatsappButton}>
+                WhatsApp
+              </a>
+            </div>
           </div>
         </section>
 
@@ -236,8 +245,31 @@ function App() {
         <section id="contact" style={styles.cta} className="cta-section">
           <p style={styles.ctaLabel}>Start with one video</p>
           <h2 style={styles.ctaTitle}>Ready to see what is holding your game back?</h2>
-          <p style={styles.ctaText}>Send a clip and get clear, actionable feedback on your technique, tactics and next steps.</p>
-          <a href="mailto:your-email@example.com" style={styles.ctaButton}>Email Me To Book</a>
+          <p style={styles.ctaText}>
+            Send a clip, ask a question, or get advice on which package is best for your game.
+          </p>
+
+          <div style={styles.contactCard}>
+            <div style={styles.contactItem}>
+              <span>Email</span>
+              <a href={`mailto:${contactEmail}?subject=Online Tennis Coaching Enquiry`}>{contactEmail}</a>
+            </div>
+
+            <div style={styles.contactItem}>
+              <span>WhatsApp</span>
+              <a href={`https://wa.me/${whatsappNumber}`}>Message on WhatsApp</a>
+            </div>
+
+            <div style={styles.contactItem}>
+              <span>Phone</span>
+              <a href={`tel:${phoneNumber.split(" ").join("")}`}>{phoneNumber}</a>
+            </div>
+          </div>
+
+          <div style={styles.ctaButtonRow}>
+            <a href={`mailto:${contactEmail}?subject=Online Tennis Coaching Enquiry`} style={styles.ctaButton}>Email Me To Book</a>
+            <a href={`https://wa.me/${whatsappNumber}`} style={styles.ctaSecondaryButton}>WhatsApp Enquiry</a>
+          </div>
         </section>
       </main>
     </div>
@@ -871,6 +903,20 @@ const styles = {
     fontWeight: 900,
     whiteSpace: "nowrap",
   },
+  whatsappButton: {
+    background: "#ffffff",
+    color: "#020617",
+    textDecoration: "none",
+    padding: "15px 22px",
+    borderRadius: 999,
+    fontWeight: 900,
+    whiteSpace: "nowrap",
+  },
+  enquiryButtons: {
+    display: "flex",
+    gap: 12,
+    flexWrap: "wrap",
+  },
   imageBreakSection: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -979,7 +1025,6 @@ const styles = {
   },
   ctaButton: {
     display: "inline-block",
-    marginTop: 30,
     background: "#020617",
     color: "#ffffff",
     padding: "15px 24px",
@@ -987,8 +1032,43 @@ const styles = {
     textDecoration: "none",
     fontWeight: 900,
   },
+  ctaSecondaryButton: {
+    display: "inline-block",
+    background: "#ffffff",
+    color: "#020617",
+    padding: "15px 24px",
+    borderRadius: 999,
+    textDecoration: "none",
+    fontWeight: 900,
+  },
+  ctaButtonRow: {
+    display: "flex",
+    justifyContent: "center",
+    gap: 14,
+    flexWrap: "wrap",
+    marginTop: 30,
+  },
+  contactCard: {
+    maxWidth: 900,
+    margin: "34px auto 0",
+    background: "rgba(2,6,23,0.92)",
+    color: "#ffffff",
+    borderRadius: 28,
+    padding: 26,
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: 16,
+    textAlign: "left",
+  },
+  contactItem: {
+    background: "rgba(255,255,255,0.08)",
+    border: "1px solid rgba(255,255,255,0.12)",
+    borderRadius: 20,
+    padding: 18,
+    display: "flex",
+    flexDirection: "column",
+    gap: 8,
+  },
 };
 
 export default App;
-
-
