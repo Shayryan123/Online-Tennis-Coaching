@@ -74,27 +74,30 @@ function App() {
           <div style={styles.cardsGrid}>
             <OfferCard
               title="Video Analysis"
-              price="From £35"
-              text="A focused breakdown of your technique, movement and match play designed to give you immediate clarity on what to improve next."
+              price="£35"
+              text="A focused breakdown of your technique, movement and match play designed to give you immediate clarity on what to improve next. Statistics, match patterns and key trends will also be analysed to help identify the most important next steps for your development."
               includes={[
                 "Technical analysis of strokes and movement",
                 "Tactical observations from real points",
                 "Clear priorities to focus on",
                 "Simple drill ideas to apply straight away",
+                "Match statistics and patterns analysed for next-step development",
               ]}
               bestFor="Players who want expert feedback without committing to ongoing coaching."
               outcome="You leave knowing what is helping your game, what is limiting it, and what to work on next."
             />
             <OfferCard
               title="Monthly Performance Plan"
-              price="From £120/month"
-              text="Ongoing online coaching support for players who want structured improvement over time rather than isolated feedback sessions."
+              price="£80/month"
+              text="Ongoing online coaching support for players who want structured improvement over time rather than isolated feedback sessions. Coaching is tailored around the player’s goals, match statistics and long-term development priorities."
               includes={[
                 "Weekly video analysis",
                 "Personalised training priorities",
                 "Ongoing technical and tactical feedback",
                 "Direct messaging support",
                 "Progress tracking over time",
+                "Personalised training programmes",
+                "Drill ideas based on statistics and player goals",
               ]}
               bestFor="Competitive juniors, tournament players and ambitious adults looking for consistent guidance."
               outcome="Build stronger habits, improve decision-making and develop your game with a clear long-term structure."
@@ -102,8 +105,8 @@ function App() {
             />
             <OfferCard
               title="Tactical Match Review"
-              price="Custom"
-              text="A deeper look into point construction, decision-making and match patterns to help you understand how higher-level players win points."
+              price="£25"
+              text="A deeper look into point construction, decision-making and match patterns to help you understand how higher-level players win points. Full matches, shorter clips and training sessions are all suitable for analysis."
               includes={[
                 "Match and point pattern analysis",
                 "Tactical decision-making review",
@@ -632,3 +635,4 @@ const styles = {
 };
 
 export default App;
+
