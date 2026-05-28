@@ -161,31 +161,37 @@ function App() {
             </p>
           </div>
 
-          <div style={styles.faqGrid}>
+          <div style={styles.faqGridCompact}>
             <FAQItem
               question="What type of footage should I send?"
-              answer="You can send match footage, training clips, squad points, rally footage, serve practice or doubles clips. Full matches and shorter clips are both useful, depending on what you want analysed."
-            />
-            <FAQItem
-              question="Do I need high-quality camera footage?"
-              answer="No, but the clearer the footage, the better. A phone recording is fine as long as the court, player movement and ball direction are reasonably visible."
+              answer="You can send match footage, training clips, squad points, rally footage, serve practice or doubles clips. Full matches and shorter clips are both useful depending on what you want analysed."
             />
             <FAQItem
               question="Can you analyse tactics as well as technique?"
-              answer="Yes. The coaching focuses on both technical details and tactical patterns, including decision-making, positioning, shot selection and how points are being won or lost."
+              answer="Yes. The coaching focuses on both technical details and tactical patterns including positioning, decision-making, shot selection and how points are being won or lost."
             />
             <FAQItem
               question="How is the feedback delivered?"
-              answer="Feedback can be delivered through email, WhatsApp or an online video call depending on the package and your preference. The aim is to make the analysis clear and easy to apply."
+              answer="Feedback can be delivered through email, WhatsApp or an online video call depending on the package and your preference."
             />
             <FAQItem
               question="Which package should I start with?"
-              answer="If you want a first look at your game, start with Video Analysis. If you want match-specific tactical feedback, choose Tactical Match Review. If you want ongoing development, the Monthly Performance Plan is the best fit."
+              answer="If you want a first look at your game, start with Video Analysis. If you want ongoing support and structure, the Monthly Performance Plan is the best option."
             />
-            <FAQItem
-              question="Is this suitable for doubles players?"
-              answer="Yes. Doubles footage can be especially useful because positioning, movement, volleying choices, serve-plus-one patterns and partnership decisions can all be reviewed."
-            />
+          </div>
+
+          <div style={styles.questionBox}>
+            <div>
+              <p style={styles.questionLabel}>Still have a question?</p>
+              <h3 style={styles.questionTitle}>Not sure which option is right for you?</h3>
+              <p style={styles.questionText}>
+                Send a quick email with your level, goals or any questions you may have and I’ll point you in the right direction.
+              </p>
+            </div>
+
+            <a href="mailto:your-email@example.com" style={styles.questionButton}>
+              Send an Email
+            </a>
           </div>
         </section>
 
@@ -653,7 +659,50 @@ const styles = {
   faqItem: {
     background: "#ffffff",
     border: "1px solid #e2e8f0",
-    borderRadius: 24,
+    borderRadius: 22,
+    padding: 22,
+    boxShadow: "0 12px 35px rgba(15,23,42,0.04)",
+  },
+  questionBox: {
+    marginTop: 30,
+    background: "#0f172a",
+    borderRadius: 28,
+    padding: "34px 38px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 24,
+    color: "#ffffff",
+  },
+  questionLabel: {
+    color: "#b7ff38",
+    textTransform: "uppercase",
+    letterSpacing: "0.18em",
+    fontSize: 12,
+    fontWeight: 900,
+    marginBottom: 10,
+  },
+  questionTitle: {
+    margin: 0,
+    fontSize: 30,
+    lineHeight: 1.1,
+  },
+  questionText: {
+    color: "#cbd5e1",
+    lineHeight: 1.7,
+    marginTop: 12,
+    maxWidth: 620,
+  },
+  questionButton: {
+    background: "#b7ff38",
+    color: "#020617",
+    textDecoration: "none",
+    padding: "15px 22px",
+    borderRadius: 999,
+    fontWeight: 900,
+    whiteSpace: "nowrap",
+  },
+  imageBreakSection:4,
     padding: 24,
     boxShadow: "0 16px 45px rgba(15,23,42,0.05)",
   },
