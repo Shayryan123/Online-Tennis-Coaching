@@ -656,6 +656,11 @@ const styles = {
     gridTemplateColumns: "1fr 1fr",
     gap: 18,
   },
+  faqGridCompact: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: 16,
+  },
   faqItem: {
     background: "#ffffff",
     border: "1px solid #e2e8f0",
@@ -701,10 +706,6 @@ const styles = {
     borderRadius: 999,
     fontWeight: 900,
     whiteSpace: "nowrap",
-  },
-  imageBreakSection:4,
-    padding: 24,
-    boxShadow: "0 16px 45px rgba(15,23,42,0.05)",
   },
   imageBreakSection: {
     display: "grid",
@@ -822,3 +823,4 @@ const styles = {
 };
 
 export default App;
+
