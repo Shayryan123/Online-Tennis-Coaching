@@ -348,8 +348,10 @@ const responsiveCss = `
     .about-image,
     .proof-image,
     .wide-image {
-      height: auto !important;
-      max-height: 620px !important;
+      height: 440px !important;
+      max-height: 440px !important;
+      object-fit: cover !important;
+      object-position: center !important;
     }
 
     .question-box {
@@ -406,9 +408,18 @@ const responsiveCss = `
     .about-image,
     .proof-image,
     .wide-image {
-      height: auto !important;
-      min-height: unset !important;
+      height: 320px !important;
+      min-height: 320px !important;
+      max-height: 320px !important;
+      object-fit: cover !important;
+      object-position: center !important;
       border-radius: 24px !important;
+    }
+
+    .about-image {
+      height: 360px !important;
+      min-height: 360px !important;
+      max-height: 360px !important;
     }
 
     .floating-card {
@@ -938,3 +949,4 @@ const styles = {
 };
 
 export default App;
+
