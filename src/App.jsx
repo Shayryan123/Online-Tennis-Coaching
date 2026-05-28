@@ -8,9 +8,10 @@ import actionImage from "./2 playing.png";
 function App() {
   return (
     <div style={styles.page}>
-      <header style={styles.header}>
+      <style>{responsiveCss}</style>
+      <header style={styles.header} className="site-header">
         <div style={styles.brand}>Shay Ryan Tennis</div>
-        <nav style={styles.nav}>
+        <nav style={styles.nav} className="site-nav">
           <a href="#about" style={styles.navLink}>About</a>
           <a href="#coaching" style={styles.navLink}>Coaching</a>
           <a href="#proof" style={styles.navLink}>Proof</a>
@@ -19,8 +20,8 @@ function App() {
       </header>
 
       <main>
-        <section style={styles.hero}>
-          <div style={styles.heroContent}>
+        <section style={styles.hero} className="hero-section">
+          <div style={styles.heroContent} className="hero-content">
             <p style={styles.eyebrow}>Former UK #1 Junior • GB & Wales Representative • LTA Level 3 Coach</p>
             <h1 style={styles.heroTitle}>Online tennis coaching for players who want to think, train and compete better.</h1>
             <p style={styles.heroText}>
@@ -32,25 +33,25 @@ function App() {
             </div>
           </div>
 
-          <div style={styles.heroImageWrap}>
-            <img src={heroImage} alt="Shay Ryan hitting a tennis shot" style={styles.heroImage} />
-            <div style={styles.floatingCard}>
+          <div style={styles.heroImageWrap} className="hero-image-wrap">
+            <img src={heroImage} alt="Shay Ryan hitting a tennis shot" style={styles.heroImage} className="hero-image" />
+            <div style={styles.floatingCard} className="floating-card">
               <strong>Performance insight</strong>
               <span>Technique • Tactics • Match intelligence</span>
             </div>
           </div>
         </section>
 
-        <section style={styles.statsStrip}>
+        <section style={styles.statsStrip} className="stats-strip">
           <Stat number="18+" label="Years playing" />
           <Stat number="5+" label="Years coaching" />
           <Stat number="UK #1" label="Former junior ranking" />
           <Stat number="GB" label="Representative experience" />
         </section>
 
-        <section id="about" style={styles.aboutSection}>
+        <section id="about" style={styles.aboutSection} className="about-section">
           <div style={styles.aboutImagePanel}>
-            <img src={coachImage} alt="Shay Ryan tennis coach" style={styles.aboutImage} />
+            <img src={coachImage} alt="Shay Ryan tennis coach" style={styles.aboutImage} className="about-image" />
           </div>
           <div style={styles.aboutText}>
             <p style={styles.sectionLabelDark}>Meet your coach</p>
@@ -64,14 +65,14 @@ function App() {
           </div>
         </section>
 
-        <section id="coaching" style={styles.darkSection}>
+        <section id="coaching" style={styles.darkSection} className="dark-section">
           <div style={styles.sectionIntro}>
             <p style={styles.sectionLabel}>Coaching options</p>
             <h2 style={styles.sectionTitle}>Choose the level of support your game needs.</h2>
             <p style={styles.sectionSubtext}>Start simple with a video analysis, then build into a structured plan if you want ongoing development.</p>
           </div>
 
-          <div style={styles.cardsGrid}>
+          <div style={styles.cardsGrid} className="cards-grid">
             <OfferCard
               title="Video Analysis"
               price="£35"
@@ -119,7 +120,7 @@ function App() {
           </div>
         </section>
 
-        <section id="proof" style={styles.proofSection}>
+        <section id="proof" style={styles.proofSection} className="proof-section">
           <div style={styles.proofText}>
             <p style={styles.sectionLabelDark}>Coaching in action</p>
             <h2 style={styles.darkTitle}>Learn from someone who has lived high-level tennis.</h2>
@@ -132,10 +133,10 @@ function App() {
               <p>✓ Honest priorities, not random drills</p>
             </div>
           </div>
-          <img src={groupImage} alt="Shay Ryan coaching a group of tennis players" style={styles.proofImage} />
+          <img src={groupImage} alt="Shay Ryan coaching a group of tennis players" style={styles.proofImage} className="proof-image" />
         </section>
 
-        <section style={styles.howItWorksSection}>
+        <section style={styles.howItWorksSection} className="how-section">
           <div style={styles.sectionIntro}>
             <p style={styles.sectionLabel}>How it works</p>
             <h2 style={styles.sectionTitle}>A simple process built around your footage.</h2>
@@ -144,7 +145,7 @@ function App() {
             </p>
           </div>
 
-          <div style={styles.processGridFour}>
+          <div style={styles.processGridFour} className="process-grid-four">
             <ProcessCard step="01" title="Choose your option" text="Pick video analysis, a tactical match review, or monthly support depending on the level of feedback you want." />
             <ProcessCard step="02" title="Send your footage" text="Clips, full matches, training sessions or point-play footage are all suitable. The clearer the footage, the better the analysis." />
             <ProcessCard step="03" title="Receive your breakdown" text="Your feedback can be delivered by email, WhatsApp or video call, depending on what suits you best." />
@@ -152,7 +153,7 @@ function App() {
           </div>
         </section>
 
-        <section style={styles.faqSection}>
+        <section style={styles.faqSection} className="faq-section">
           <div style={styles.faqIntro}>
             <p style={styles.sectionLabelDark}>FAQ</p>
             <h2 style={styles.darkTitle}>Common questions before getting started.</h2>
@@ -161,7 +162,7 @@ function App() {
             </p>
           </div>
 
-          <div style={styles.faqGridCompact}>
+          <div style={styles.faqGridCompact} className="faq-grid-compact">
             <FAQItem
               question="What type of footage should I send?"
               answer="You can send match footage, training clips, squad points, rally footage, serve practice or doubles clips. Full matches and shorter clips are both useful depending on what you want analysed."
@@ -180,7 +181,7 @@ function App() {
             />
           </div>
 
-          <div style={styles.questionBox}>
+          <div style={styles.questionBox} className="question-box">
             <div>
               <p style={styles.questionLabel}>Still have a question?</p>
               <h3 style={styles.questionTitle}>Not sure which option is right for you?</h3>
@@ -195,8 +196,8 @@ function App() {
           </div>
         </section>
 
-        <section style={styles.imageBreakSection}>
-          <img src={actionImage} alt="Shay Ryan competing on court" style={styles.wideImage} />
+        <section style={styles.imageBreakSection} className="image-break-section">
+          <img src={actionImage} alt="Shay Ryan competing on court" style={styles.wideImage} className="wide-image" />
           <div style={styles.imageBreakText}>
             <p style={styles.sectionLabel}>The difference</p>
             <h2 style={styles.sectionTitle}>Better tennis starts with better understanding.</h2>
@@ -204,13 +205,13 @@ function App() {
           </div>
         </section>
 
-        <section style={styles.testimonialSection}>
+        <section style={styles.testimonialSection} className="testimonial-section">
           <p style={styles.sectionLabelDark}>Player feedback</p>
           <h2 style={styles.darkTitle}>Trusted by players looking for clearer insight into their game.</h2>
           <p style={styles.testimonialIntro}>
             Real feedback from players who used online video analysis and tactical match review to better understand their technique, decision-making and patterns of play.
           </p>
-          <div style={styles.testimonialGridThree}>
+          <div style={styles.testimonialGridThree} className="testimonial-grid-three">
             <Testimonial
               text="I sent Shay around 20 minutes of footage combining points from squad sessions and a match I had played using the Tactical Match Review option. The feedback was detailed but explained in a simple way that completely opened my eyes to my game from a tactical perspective. The level of detail was fantastic and I would recommend it to anyone wanting genuine insight into their play. Shay also offered an additional online call if I was unsure how to apply the feedback going forward, which was a great touch."
               name="Josh Lown"
@@ -229,7 +230,7 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" style={styles.cta}>
+        <section id="contact" style={styles.cta} className="cta-section">
           <p style={styles.ctaLabel}>Start with one video</p>
           <h2 style={styles.ctaTitle}>Ready to see what is holding your game back?</h2>
           <p style={styles.ctaText}>Send a clip and get clear, actionable feedback on your technique, tactics and next steps.</p>
@@ -311,6 +312,120 @@ function Testimonial({ text, name, role }) {
     </div>
   );
 }
+
+const responsiveCss = `
+  * { box-sizing: border-box; }
+
+  @media (max-width: 980px) {
+    .site-header {
+      align-items: flex-start !important;
+      gap: 16px !important;
+    }
+
+    .site-nav {
+      justify-content: flex-start !important;
+      gap: 14px !important;
+    }
+
+    .hero-section,
+    .about-section,
+    .proof-section,
+    .faq-section,
+    .image-break-section {
+      grid-template-columns: 1fr !important;
+      gap: 38px !important;
+    }
+
+    .stats-strip,
+    .cards-grid,
+    .process-grid-four,
+    .faq-grid-compact,
+    .testimonial-grid-three {
+      grid-template-columns: 1fr 1fr !important;
+    }
+
+    .hero-image,
+    .about-image,
+    .proof-image,
+    .wide-image {
+      height: auto !important;
+      max-height: 620px !important;
+    }
+
+    .question-box {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .site-header {
+      position: static !important;
+      padding: 18px 5% !important;
+    }
+
+    .site-nav a:not(:last-child) {
+      display: none !important;
+    }
+
+    .hero-section,
+    .about-section,
+    .dark-section,
+    .proof-section,
+    .how-section,
+    .faq-section,
+    .image-break-section,
+    .testimonial-section,
+    .cta-section {
+      padding: 64px 5% !important;
+    }
+
+    .hero-section {
+      padding-top: 56px !important;
+    }
+
+    h1 {
+      font-size: 42px !important;
+      line-height: 1.04 !important;
+    }
+
+    h2 {
+      font-size: 34px !important;
+      line-height: 1.08 !important;
+    }
+
+    .stats-strip,
+    .cards-grid,
+    .process-grid-four,
+    .faq-grid-compact,
+    .testimonial-grid-three {
+      grid-template-columns: 1fr !important;
+    }
+
+    .hero-image,
+    .about-image,
+    .proof-image,
+    .wide-image {
+      height: auto !important;
+      min-height: unset !important;
+      border-radius: 24px !important;
+    }
+
+    .floating-card {
+      position: static !important;
+      margin-top: 14px !important;
+    }
+
+    .question-box {
+      padding: 26px !important;
+    }
+
+    .question-box a {
+      width: 100% !important;
+      text-align: center !important;
+    }
+  }
+`;
 
 const styles = {
   page: {
@@ -823,4 +938,3 @@ const styles = {
 };
 
 export default App;
-
