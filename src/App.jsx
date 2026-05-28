@@ -161,10 +161,26 @@ function App() {
 
         <section style={styles.testimonialSection}>
           <p style={styles.sectionLabelDark}>Player feedback</p>
-          <h2 style={styles.darkTitle}>Add testimonials here as soon as you have them.</h2>
-          <div style={styles.testimonialGrid}>
-            <Testimonial text="The feedback was clear, specific and immediately helped me understand what to focus on." />
-            <Testimonial text="I finally understood why I was losing points and what tactical changes I needed to make." />
+          <h2 style={styles.darkTitle}>Trusted by players looking for clearer insight into their game.</h2>
+          <p style={styles.testimonialIntro}>
+            Real feedback from players who used online video analysis and tactical match review to better understand their technique, decision-making and patterns of play.
+          </p>
+          <div style={styles.testimonialGridThree}>
+            <Testimonial
+              text="I sent Shay around 20 minutes of footage combining points from squad sessions and a match I had played using the Tactical Match Review option. The feedback was detailed but explained in a simple way that completely opened my eyes to my game from a tactical perspective. The level of detail was fantastic and I would recommend it to anyone wanting genuine insight into their play. Shay also offered an additional online call if I was unsure how to apply the feedback going forward, which was a great touch."
+              name="Josh Lown"
+              role="Competitive Club Player"
+            />
+            <Testimonial
+              text="I heard about Shay’s online coaching and decided to try it as a competitive University BUCS player. The feedback and analysis were explained in a way that allowed me to clearly see evidence of the mistakes and unsuccessful patterns I had been using in matches, which was something I hadn’t really been exposed to before. It gave me a completely new area to focus on through detailed analysis of how my technique was affecting outcomes, and how certain decisions were influencing points. I chose the email option and the feedback was visually excellent. Really beneficial overall and I’ll definitely be using the video analysis service again."
+              name="Harry"
+              role="Regional Performance Player"
+            />
+            <Testimonial
+              text="I play a lot of doubles in summer and winter leagues for both club and county, so I wanted to gain some insight into my game. The feedback was genuinely eye-opening. Having not worked with a coach for a number of years, the analysis highlighted bad habits in my positioning and volleying that I simply wasn’t aware of. Shay was great on the video call and it felt like a really friendly discussion around the clips and our views on the points being played. If I was still playing full-time, I would have loved to have this sort of support on a permanent basis as an alternative to constantly needing to be on court."
+              name="Max Jones"
+              role="Competitive Doubles Player"
+            />
           </div>
         </section>
 
@@ -229,11 +245,15 @@ function ProcessCard({ step, title, text }) {
   );
 }
 
-function Testimonial({ text }) {
+function Testimonial({ text, name, role }) {
   return (
     <div style={styles.testimonialCard}>
-      <p>“{text}”</p>
-      <strong>Player testimonial</strong>
+      <p style={styles.quoteMark}>“</p>
+      <p style={styles.testimonialText}>{text}</p>
+      <div style={styles.testimonialPerson}>
+        <strong>{name}</strong>
+        <span>{role}</span>
+      </div>
     </div>
   );
 }
@@ -586,15 +606,53 @@ const styles = {
     gap: 22,
     marginTop: 34,
   },
+  testimonialIntro: {
+    maxWidth: 850,
+    color: "#475569",
+    fontSize: 18,
+    lineHeight: 1.75,
+    marginTop: -6,
+    marginBottom: 34,
+  },
+  testimonialGridThree: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: 22,
+    alignItems: "stretch",
+  },
   testimonialCard: {
+    position: "relative",
     background: "#ffffff",
     border: "1px solid #e2e8f0",
     borderRadius: 26,
     padding: 30,
     color: "#334155",
-    fontSize: 18,
+    fontSize: 16,
     lineHeight: 1.7,
     boxShadow: "0 20px 55px rgba(15,23,42,0.06)",
+    display: "flex",
+    flexDirection: "column",
+    minHeight: 500,
+  },
+  quoteMark: {
+    color: "#65a30d",
+    fontSize: 54,
+    lineHeight: 0.8,
+    margin: "0 0 10px",
+    fontWeight: 900,
+  },
+  testimonialText: {
+    margin: 0,
+    flex: 1,
+  },
+  testimonialPerson: {
+    borderTop: "1px solid #e2e8f0",
+    marginTop: 24,
+    paddingTop: 18,
+    display: "flex",
+    flexDirection: "column",
+    gap: 4,
+    color: "#020617",
   },
   cta: {
     padding: "95px 7%",
@@ -635,4 +693,5 @@ const styles = {
 };
 
 export default App;
+
 
