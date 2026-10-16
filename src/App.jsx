@@ -27,6 +27,10 @@ function App() {
     window.addEventListener("hashchange", update);
     return () => window.removeEventListener("hashchange", update);
   }, []);
+  const scrollToSection = (event, id) => {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const navigate = (target) => {
     window.location.hash = target;
     setInPerson(target.startsWith("#/in-person"));
@@ -40,10 +44,10 @@ function App() {
         <nav aria-label="Main navigation">
           <a className={!inPerson ? "active" : ""} href="#/" onClick={(e) => { e.preventDefault(); navigate("#/"); }}>Online Coaching</a>
           <a className={inPerson ? "active" : ""} href="#/in-person" onClick={(e) => { e.preventDefault(); navigate("#/in-person"); }}>In-Person Coaching</a>
-          <a className="nav-cta" href={inPerson ? "#in-person-contact" : "#contact"}>Get in Touch</a>
+          <a className="nav-cta" href={inPerson ? "#in-person-contact" : "#contact"} onClick={inPerson ? (e) => scrollToSection(e, "in-person-contact") : undefined}>Get in Touch</a>
         </nav>
       </header>
-      {inPerson ? <InPerson /> : <Online />}
+      {inPerson ? <InPerson scrollToSection={scrollToSection} /> : <Online />}
       <footer className="footer"><strong>SR Tennis Performance</strong><span>Technical insight. Tactical understanding. Better tennis.</span><span>© {new Date().getFullYear()} SR Tennis Performance</span></footer>
     </div>
   );
@@ -67,14 +71,14 @@ function Online() {
   </main>;
 }
 
-function InPerson() {
+function InPerson({ scrollToSection }) {
   return <main>
-    <section className="hero split"><div><p className="eyebrow">In-person tennis coaching · South Wales</p><h1>Develop your game. Build confidence. <em>Enjoy your tennis.</em></h1><p className="lead">Individual and group tennis coaching for juniors and adults of all levels, delivered with a personal approach and a focus on lasting improvement.</p><div className="buttons"><a className="button lime" href="#in-person-contact">Enquire About Coaching</a><a className="button outline" href="#locations">Where I Coach</a></div></div><div className="photo-frame"><img src={groupImage} alt="Tennis coaching session led by Shay Ryan"/><div className="photo-caption">Coaching for every level <small>Learn · Improve · Compete</small></div></div></section>
+    <section className="hero split"><div><p className="eyebrow">In-person tennis coaching · South Wales</p><h1>Develop your game. Build confidence. <em>Enjoy your tennis.</em></h1><p className="lead">Individual and group tennis coaching for juniors and adults of all levels, delivered with a personal approach and a focus on lasting improvement.</p><div className="buttons"><a className="button lime" href="#in-person-contact" onClick={(e) => scrollToSection(e, "in-person-contact")}>Enquire About Coaching</a><a className="button outline" href="#locations" onClick={(e) => scrollToSection(e, "locations")}>Where I Coach</a></div></div><div className="photo-frame"><img src={groupImage} alt="Tennis coaching session led by Shay Ryan"/><div className="photo-caption">Coaching for every level <small>Learn · Improve · Compete</small></div></div></section>
     <section className="stats"><div><b>UK #1</b><span>Former junior</span></div><div><b>GB & Wales</b><span>Representative</span></div><div><b>BUCS</b><span>National League</span></div><div><b>LTA 3</b><span>Accredited Coach</span></div></section>
     <section className="section light split"><div className="image-box portrait"><img src={coachImage} alt="Shay Ryan, Head Coach at Creigiau LTC"/></div><div><p className="label">Meet your coach</p><h2>Hi, I'm Shay Ryan.</h2><p>I'm an LTA Level 3 Accredited Coach, Head Coach at Creigiau LTC and a county coach working with Tennis Wales.</p><p>My playing background includes reaching UK No. 1 as a junior, winning three Welsh junior titles, representing Great Britain and Wales, and winning a Tennis Europe title. I also competed in the <strong>BUCS National League throughout university</strong>, representing Leeds Beckett University.</p><p>My coaching experience includes working as a Lead Coach with 5 Star Tennis Holidays in Portugal, coaching within the Leeds Beckett University performance environment, and delivering individual and group sessions for players across different ages and abilities.</p><p>These experiences help me combine competitive insight with an approachable coaching style, whatever your starting point.</p></div></section>
     <section className="section dark"><div className="section-heading"><p className="label lime-text">My coaching philosophy</p><h2>Coaching built around the individual.</h2><p>I believe great coaching should be enjoyable, challenging and specific to each player. No two players have exactly the same strengths, goals or reasons for playing.</p></div><div className="philosophy"><article><span>01</span><h3>Understand the player</h3><p>Start with your goals, current level and what you enjoy about the game.</p></article><article><span>02</span><h3>Develop the whole game</h3><p>Combine technical foundations with tactical awareness, decision-making and movement.</p></article><article><span>03</span><h3>Make progress enjoyable</h3><p>Build confidence through purposeful, appropriately challenging sessions and clear feedback.</p></article></div></section>
     <section className="section light" id="locations"><div className="section-heading"><p className="label">Where I coach</p><h2>In-person coaching opportunities.</h2><p>Sessions are tailored to your ability and goals. Get in touch for availability and further information.</p></div><div className="locations"><article><span className="location-tag">Head Coach</span><h3>Creigiau LTC</h3><p>Individual <strong>1-to-1 coaching</strong> and <strong>group sessions</strong> for juniors and adults of all levels, from beginners to competitive players.</p><a className="text-link" href={mailto("Creigiau LTC Coaching Enquiry")}>Enquire about Creigiau coaching →</a></article><article><span className="location-tag">Individual Coaching</span><h3>Cardiff LTC</h3><p>Personalised <strong>1-to-1 tennis coaching</strong>, focused on your technique, tactics, confidence and individual development goals.</p><a className="text-link" href={mailto("Cardiff LTC Coaching Enquiry")}>Enquire about Cardiff coaching →</a></article></div></section>
-    <section className="section dark split"><div><p className="label lime-text">On-court development</p><h2>From your first lesson to your next competitive goal.</h2><p>Whether you're new to tennis, returning after time away, developing as a junior or looking to compete more effectively, we'll build sessions around what matters most to you.</p><a className="button lime" href="#in-person-contact">Get in Touch</a></div><div className="image-box"><img src={actionImage} alt="Shay Ryan playing competitive tennis"/></div></section>
+    <section className="section dark split"><div><p className="label lime-text">On-court development</p><h2>From your first lesson to your next competitive goal.</h2><p>Whether you're new to tennis, returning after time away, developing as a junior or looking to compete more effectively, we'll build sessions around what matters most to you.</p><a className="button lime" href="#in-person-contact" onClick={(e) => scrollToSection(e, "in-person-contact")}>Get in Touch</a></div><div className="image-box"><img src={actionImage} alt="Shay Ryan playing competitive tennis"/></div></section>
     <Contact id="in-person-contact" title="Let's work on your game." subtitle="Ask about 1-to-1 lessons or group coaching, share your goals and find out about availability. Prices are provided on enquiry." subject="In-Person Tennis Coaching Enquiry" />
   </main>;
 }
